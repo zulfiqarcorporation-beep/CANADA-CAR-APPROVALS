@@ -850,7 +850,46 @@ function advance(pfx, dpfx, lpfx, from, to, max) {
 }
 function hNext(n) { advance('hs','hd','hl',n,n+1,5); }
 function hBack(n) { advance('hs','hd','hl',n,n-1,5); }
+function collectLead(pfx) {
+  const get = id => document.getElementById(id);
+  const sel = (id, q) => { const e = get(id); return e ? e.querySelector(q) : null; };
+  const txt = el => el ? (el.innerText || el.textContent || '').trim() : '';
+  const s1 = sel(pfx+'1','.option-card.selected .option-label');
+  const s2 = sel(pfx+'2','.radio-option.selected .radio-text');
+  const s3 = sel(pfx+'3','.radio-option.selected .radio-text');
+  const s4 = get(pfx+'4') ? get(pfx+'4').querySelector('select') : null;
+  const s5 = get(pfx+'5');
+  const inputs = s5 ? s5.querySelectorAll('input') : [];
+  return {
+    _subject: 'New Auto Loan Lead — Canada Car Approvals',
+    _captcha: 'false',
+    _template: 'table',
+    'Vehicle Type': txt(s1),
+    'Credit': txt(s2),
+    'Employment': txt(s3),
+    'Province': s4 ? s4.value : '',
+    'First Name': inputs[0] ? inputs[0].value : '',
+    'Last Name':  inputs[1] ? inputs[1].value : '',
+    'Phone':      inputs[2] ? inputs[2].value : '',
+    'Email':      inputs[3] ? inputs[3].value : '',
+    'Source':     window.location.href
+  };
+}
+function sendToFormSubmit(payload) {
+  const f = document.createElement('form');
+  f.action = 'https://formsubmit.co/zulfiqarcorporation@gmail.com';
+  f.method = 'POST';
+  f.style.display = 'none';
+  Object.keys(payload).forEach(k => {
+    const i = document.createElement('input');
+    i.type = 'hidden'; i.name = k; i.value = payload[k] == null ? '' : String(payload[k]);
+    f.appendChild(i);
+  });
+  document.body.appendChild(f);
+  f.submit();
+}
 function hSubmit() {
+  sendToFormSubmit(collectLead('hs'));
   document.getElementById('hs5').classList.remove('active');
   document.getElementById('hsSuccess').classList.add('active');
   document.getElementById('hProg').style.display = 'none';
@@ -858,6 +897,7 @@ function hSubmit() {
 function mNext(n) { advance('ms','md','ml',n,n+1,5); }
 function mBack(n) { advance('ms','md','ml',n,n-1,5); }
 function mSubmit() {
+  sendToFormSubmit(collectLead('ms'));
   document.getElementById('ms5').classList.remove('active');
   document.getElementById('msSuccess').classList.add('active');
   document.getElementById('mProg').style.display = 'none';
