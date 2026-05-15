@@ -875,29 +875,30 @@ function collectLead(pfx) {
     'Source':     window.location.href
   };
 }
-function sendToFormSubmit(payload) {
-  const f = document.createElement('form');
-  f.action = 'https://formsubmit.co/abbas.zulfiq@gmail.com';
-  f.method = 'POST';
-  f.style.display = 'none';
-  Object.keys(payload).forEach(k => {
-    const i = document.createElement('input');
-    i.type = 'hidden'; i.name = k; i.value = payload[k] == null ? '' : String(payload[k]);
-    f.appendChild(i);
-  });
-  document.body.appendChild(f);
-  f.submit();
+async function sendToWeb3Forms(payload) {
+  const body = Object.assign({ access_key: '5a21057a-c151-49bf-9435-e779bcdd7f94' }, payload);
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(body)
+    });
+    const data = await res.json();
+    if (!data.success) console.error('Web3Forms error:', data.message);
+  } catch (err) {
+    console.error('Web3Forms submission failed:', err);
+  }
 }
-function hSubmit() {
-  sendToFormSubmit(collectLead('hs'));
+async function hSubmit() {
+  await sendToWeb3Forms(collectLead('hs'));
   document.getElementById('hs5').classList.remove('active');
   document.getElementById('hsSuccess').classList.add('active');
   document.getElementById('hProg').style.display = 'none';
 }
 function mNext(n) { advance('ms','md','ml',n,n+1,5); }
 function mBack(n) { advance('ms','md','ml',n,n-1,5); }
-function mSubmit() {
-  sendToFormSubmit(collectLead('ms'));
+async function mSubmit() {
+  await sendToWeb3Forms(collectLead('ms'));
   document.getElementById('ms5').classList.remove('active');
   document.getElementById('msSuccess').classList.add('active');
   document.getElementById('mProg').style.display = 'none';
