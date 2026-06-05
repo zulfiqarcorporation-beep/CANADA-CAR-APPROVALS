@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Commercial Funding Portal | Dealer Sign-In | Canada Car Approvals</title>
+<meta name="description" content="Dealer partner sign-in for the Commercial Funding Portal. Submit equipment financing credit applications for your clients.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0a0a0a;--navy-mid:#1a1a1a;--gold:#d52b1e;--gold-light:#ef3a2c;--cream:#f7f3ed;--white:#fff;--text-muted:#6b7280;--border:rgba(213,43,30,0.2);}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--navy);color:var(--cream);min-height:100vh;display:flex;flex-direction:column}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 4rem;background:rgba(10,10,10,0.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+nav a.brand{font-family:'Montserrat',sans-serif;font-weight:900;color:#fff;text-decoration:none;font-size:1.25rem;letter-spacing:-0.02em}
+nav a.brand span{color:var(--gold)}
+.nav-right{display:flex;align-items:center;gap:1.2rem}
+.nav-right a{color:rgba(247,243,237,0.7);font-size:0.88rem;text-decoration:none}
+.nav-right a:hover{color:var(--gold)}
+#signoutBtn{display:none;background:transparent;border:1px solid var(--border);color:var(--cream);padding:0.55rem 1rem;border-radius:3px;font-weight:600;font-size:0.82rem;cursor:pointer}
+#signoutBtn:hover{border-color:var(--gold);color:var(--gold)}
+main{flex:1;padding:3rem 1.5rem}
+.eyebrow{font-size:0.75rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;text-align:center}
+h1{font-family:'Montserrat',sans-serif;font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:900;line-height:1.1;color:#fff;letter-spacing:-0.03em;text-align:center;margin-bottom:0.6rem}
+.lede{font-size:0.98rem;color:rgba(247,243,237,0.65);line-height:1.6;text-align:center;max-width:600px;margin:0 auto 2rem;font-weight:300}
+.card{background:#fff;border-radius:6px;padding:2.4rem;box-shadow:0 40px 100px rgba(0,0,0,0.5);color:var(--navy)}
+.signin-wrap{max-width:440px;margin:0 auto}
+.app-wrap{max-width:880px;margin:0 auto}
+label{display:block;font-size:0.78rem;font-weight:600;color:var(--navy);margin-bottom:0.35rem;letter-spacing:0.02em}
+.fi{width:100%;padding:0.85rem 0.9rem;border:1.5px solid #e5e7eb;border-radius:4px;font-family:'Inter',sans-serif;font-size:0.92rem;color:var(--navy);background:#fafafa;margin-bottom:1rem;outline:none;transition:border-color 0.2s}
+.fi:focus{border-color:var(--gold);background:#fff}
+textarea.fi{min-height:90px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem}
+.row-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.8rem}
+.submit{width:100%;background:var(--gold);color:#fff;border:none;padding:1.05rem;font-family:'Inter',sans-serif;font-size:0.95rem;font-weight:700;cursor:pointer;border-radius:3px;transition:all 0.2s;letter-spacing:0.02em;margin-top:0.4rem}
+.submit:hover{background:var(--gold-light);transform:translateY(-2px)}
+.form-tag{font-size:0.7rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem}
+.form-title{font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:800;margin-bottom:0.4rem;letter-spacing:-0.02em;color:var(--navy)}
+.form-sub{font-size:0.9rem;color:var(--text-muted);margin-bottom:1.6rem;line-height:1.5}
+.section-h{font-family:'Montserrat',sans-serif;font-size:1.05rem;font-weight:800;color:var(--navy);margin:1.6rem 0 0.8rem;padding-bottom:0.5rem;border-bottom:1px solid #e5e7eb;letter-spacing:-0.01em}
+.section-h:first-of-type{margin-top:0.4rem}
+.radio-group{display:flex;gap:1.4rem;margin-bottom:1rem;padding:0.6rem 0}
+.radio-group label{display:inline-flex;align-items:center;gap:0.5rem;font-weight:500;font-size:0.92rem;margin:0;cursor:pointer}
+.radio-group input{accent-color:var(--gold);width:18px;height:18px}
+.error{background:rgba(213,43,30,0.08);border:1px solid var(--gold);color:var(--gold);padding:0.7rem 0.9rem;border-radius:4px;font-size:0.85rem;margin-bottom:1rem;display:none}
+.error.show{display:block}
+.success{display:none;text-align:center;padding:1.5rem 0;margin-bottom:1rem;background:rgba(16,185,129,0.08);border:1px solid #10b981;border-radius:4px;color:#065f46;font-size:0.9rem;font-weight:600}
+.success.show{display:block}
+.hidden{display:none}
+footer{background:#050505;padding:2rem 4rem;border-top:1px solid var(--border);text-align:center}
+footer a{color:var(--gold);text-decoration:none;font-weight:600}
+.foot-legal{font-size:0.74rem;color:rgba(247,243,237,0.4);max-width:720px;margin:0.6rem auto 0;line-height:1.6}
+@media(max-width:760px){
+  nav{padding:0.9rem 1.2rem}
+  .card{padding:1.6rem 1.2rem}
+  .row,.row-3{grid-template-columns:1fr}
+  footer{padding:1.6rem 1.2rem}
+  main{padding:2rem 0.9rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="brand">Canada Car <span>Approvals</span></a>
+  <div class="nav-right">
+    <a href="dealer-partners.html">Dealer Partners</a>
+    <button id="signoutBtn" onclick="signOut()">Sign Out</button>
+  </div>
+</nav>
+
+<main>
+
+  <!-- SIGN IN VIEW -->
+  <section id="signinView">
+    <div class="eyebrow">Dealer Partners</div>
+    <h1>Commercial Funding Portal</h1>
+    <p class="lede">Sign in to submit equipment financing credit applications on behalf of your clients.</p>
+    <div class="card signin-wrap">
+      <div class="form-tag">Secure Sign-In</div>
+      <div class="form-title">Partner Login</div>
+      <div class="form-sub">Use the credentials provided by your Canada Car Approvals partner success manager.</div>
+      <div class="error" id="signinError">Invalid username or password.</div>
+      <form id="signinForm" onsubmit="return doSignIn(event)" autocomplete="on">
+        <label for="username">Username</label>
+        <input class="fi" id="username" name="username" autocomplete="username" required>
+        <label for="password">Password</label>
+        <input class="fi" id="password" name="password" type="password" autocomplete="current-password" required>
+        <button class="submit" type="submit">Sign In →</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- APPLICATION VIEW -->
+  <section id="appView" class="hidden">
+    <div class="eyebrow">Commercial Funding Portal</div>
+    <h1>Credit Application</h1>
+    <p class="lede">Submit a client's equipment financing application. On submit, a completed copy will download to your computer.</p>
+    <div class="card app-wrap">
+      <div class="success" id="appSuccess">✓ Application submitted — completed copy downloaded.</div>
+      <form id="appForm" onsubmit="return submitApp(event)">
+
+        <div class="section-h">Applicant Information</div>
+        <div class="row">
+          <div><label>First Name</label><input class="fi" name="First Name" required></div>
+          <div><label>Last Name</label><input class="fi" name="Last Name" required></div>
+        </div>
+        <div class="row">
+          <div><label>Date of Birth</label><input class="fi" name="Date of Birth" type="date" required></div>
+          <div><label>SIN (optional)</label><input class="fi" name="SIN" inputmode="numeric"></div>
+        </div>
+        <div class="row">
+          <div><label>Email</label><input class="fi" name="Email" type="email" required></div>
+          <div><label>Phone</label><input class="fi" name="Phone" type="tel" required></div>
+        </div>
+
+        <div class="section-h">Home Address</div>
+        <label>Street Address</label>
+        <input class="fi" name="Street Address" required>
+        <div class="row-3">
+          <div><label>City</label><input class="fi" name="City" required></div>
+          <div><label>Province</label>
+            <select class="fi" name="Province" required>
+              <option value="">Select…</option>
+              <option>Ontario</option><option>British Columbia</option><option>Alberta</option>
+              <option>Quebec</option><option>Manitoba</option><option>Saskatchewan</option>
+              <option>Nova Scotia</option><option>New Brunswick</option>
+              <option>Newfoundland &amp; Labrador</option><option>Prince Edward Island</option>
+              <option>Yukon</option><option>Northwest Territories</option><option>Nunavut</option>
+            </select>
+          </div>
+          <div><label>Postal Code</label><input class="fi" name="Postal Code" required></div>
+        </div>
+
+        <div class="section-h">Company Information</div>
+        <label>Business Structure</label>
+        <div class="radio-group">
+          <label><input type="radio" name="Business Structure" value="Sole Proprietorship" required> Sole Proprietorship</label>
+          <label><input type="radio" name="Business Structure" value="Corporation"> Corporation</label>
+        </div>
+        <div class="row">
+          <div><label>Company / Legal Name</label><input class="fi" name="Company Name" required></div>
+          <div><label>Business / Corp Number</label><input class="fi" name="Business Number"></div>
+        </div>
+        <div class="row">
+          <div><label>Years in Business</label><input class="fi" name="Years in Business" type="number" min="0" required></div>
+          <div><label>Industry</label><input class="fi" name="Industry" required></div>
+        </div>
+        <label>Business Address</label>
+        <input class="fi" name="Business Address" required>
+        <div class="row">
+          <div><label>Annual Revenue (CAD)</label><input class="fi" name="Annual Revenue" type="number" min="0" required></div>
+          <div><label>Requested Funding (CAD)</label><input class="fi" name="Requested Funding" type="number" min="0" required></div>
+        </div>
+        <label>Equipment Being Financed</label>
+        <textarea class="fi" name="Equipment" placeholder="Describe the equipment, vendor, and intended use…" required></textarea>
+
+        <button class="submit" type="submit">Submit Application & Download Copy →</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p style="font-family:'Montserrat',sans-serif;color:#fff;font-size:1.1rem">Canada Car <span style="color:var(--gold)">Approvals</span> — Commercial Funding</p>
+  <p style="margin-top:0.6rem"><a href="dealer-partners.html">← Dealer Partners</a> &nbsp;·&nbsp; <a href="tel:18885552277">1-888-555-CARS</a></p>
+  <p class="foot-legal">© Canada Car Approvals. Commercial funding subject to credit review and underwriting approval. Portal access restricted to authorized dealer partners.</p>
+</footer>
+
+<script>
+const CREDS = { user: "SOLUCO", pass: "SOLUCO123" };
+
+function showApp(){
+  document.getElementById('signinView').classList.add('hidden');
+  document.getElementById('appView').classList.remove('hidden');
+  document.getElementById('signoutBtn').style.display = 'inline-block';
+  try { sessionStorage.setItem('cfp_auth','1'); } catch(e){}
+  window.scrollTo({top:0});
+}
+function signOut(){
+  try { sessionStorage.removeItem('cfp_auth'); } catch(e){}
+  document.getElementById('appView').classList.add('hidden');
+  document.getElementById('signinView').classList.remove('hidden');
+  document.getElementById('signoutBtn').style.display = 'none';
+  document.getElementById('signinForm').reset();
+  window.scrollTo({top:0});
+}
+function doSignIn(e){
+  e.preventDefault();
+  const u = document.getElementById('username').value.trim().toUpperCase();
+  const p = document.getElementById('password').value;
+  const err = document.getElementById('signinError');
+  if(u === CREDS.user && p === CREDS.pass){ err.classList.remove('show'); showApp(); }
+  else { err.classList.add('show'); }
+  return false;
+}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function submitApp(e){
+  e.preventDefault();
+  const form = e.target;
+  const fd = new FormData(form);
+  const rows = [];
+  fd.forEach((v,k)=>{ rows.push(`<tr><th align="left" style="padding:10px 12px;border:1px solid #ddd;background:#f7f3ed;width:35%;">${esc(k)}</th><td style="padding:10px 12px;border:1px solid #ddd;">${esc(v)||'&mdash;'}</td></tr>`); });
+  const now = new Date();
+  const company = String(fd.get('Company Name')||'application');
+  const html = `<!DOCTYPE html><html><head><meta charset="utf-8"><title>Credit Application — ${esc(company)}</title></head>
+<body style="font-family:Inter,Arial,sans-serif;color:#0a0a0a;max-width:820px;margin:24px auto;padding:0 16px;">
+<div style="border-bottom:3px solid #d52b1e;padding-bottom:12px;margin-bottom:18px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#d52b1e;">Canada Car Approvals — Commercial Funding</div>
+  <h1 style="font-family:Montserrat,Arial,sans-serif;font-size:26px;margin:6px 0 2px;">Credit Application</h1>
+  <div style="color:#6b7280;font-size:13px;">Submitted ${esc(now.toLocaleString())}</div>
+</div>
+<table style="border-collapse:collapse;width:100%;font-size:14px;">${rows.join('')}</table>
+<p style="margin-top:20px;font-size:11px;color:#6b7280;">Confidential — for underwriting review only.</p>
+</body></html>`;
+  const safe = company.replace(/[^a-z0-9]+/gi,'_').replace(/^_+|_+$/g,'')||'application';
+  const stamp = now.toISOString().replace(/[:.]/g,'-');
+  const blob = new Blob([html],{type:'text/html'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = `credit-application_${safe}_${stamp}.html`;
+  document.body.appendChild(a); a.click(); a.remove();
+  URL.revokeObjectURL(url);
+  document.getElementById('appSuccess').classList.add('show');
+  form.reset();
+  window.scrollTo({top:0,behavior:'smooth'});
+  setTimeout(()=>document.getElementById('appSuccess').classList.remove('show'),5000);
+  return false;
+}
+try { if(sessionStorage.getItem('cfp_auth')==='1') showApp(); } catch(e){}
+</script>
+</body>
+</html>
