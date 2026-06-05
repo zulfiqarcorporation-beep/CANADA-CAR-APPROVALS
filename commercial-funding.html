@@ -20,6 +20,8 @@ nav a.brand span{color:var(--gold)}
 .nav-right{display:flex;align-items:center;gap:1.2rem}
 .nav-right a{color:rgba(247,243,237,0.7);font-size:0.88rem;text-decoration:none}
 .nav-right a:hover{color:var(--gold)}
+#whoami{display:none;color:rgba(247,243,237,0.8);font-size:0.82rem;font-weight:600;letter-spacing:0.04em}
+#whoami b{color:var(--gold)}
 #signoutBtn{display:none;background:transparent;border:1px solid var(--border);color:var(--cream);padding:0.55rem 1rem;border-radius:3px;font-weight:600;font-size:0.82rem;cursor:pointer}
 #signoutBtn:hover{border-color:var(--gold);color:var(--gold)}
 main{flex:1;padding:3rem 1.5rem}
@@ -54,15 +56,10 @@ textarea.fi{min-height:90px;resize:vertical}
 footer{background:#050505;padding:2rem 4rem;border-top:1px solid var(--border);text-align:center}
 footer a{color:var(--gold);text-decoration:none;font-weight:600}
 .foot-legal{font-size:0.74rem;color:rgba(247,243,237,0.4);max-width:720px;margin:0.6rem auto 0;line-height:1.6}
-
-/* Tabs */
 .tabs{display:flex;gap:0.4rem;max-width:1200px;margin:0 auto 1.6rem;border-bottom:1px solid rgba(247,243,237,0.1);padding:0 0.4rem}
 .tab{background:transparent;border:none;color:rgba(247,243,237,0.55);padding:0.9rem 1.4rem;font-family:'Inter',sans-serif;font-size:0.9rem;font-weight:600;cursor:pointer;border-bottom:2px solid transparent;letter-spacing:0.02em;transition:all 0.15s}
 .tab:hover{color:var(--cream)}
 .tab.active{color:var(--gold);border-bottom-color:var(--gold)}
-.tab .count{display:inline-block;background:rgba(213,43,30,0.18);color:var(--gold);font-size:0.72rem;font-weight:700;padding:0.1rem 0.45rem;border-radius:10px;margin-left:0.4rem}
-
-/* Stats */
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;max-width:1200px;margin:0 auto 1.6rem}
 .stat{background:var(--navy-mid);border:1px solid rgba(247,243,237,0.08);border-radius:6px;padding:1.2rem 1.3rem;position:relative;overflow:hidden}
 .stat::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold)}
@@ -73,16 +70,12 @@ footer a{color:var(--gold);text-decoration:none;font-weight:600}
 .stat .lbl{font-size:0.7rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(247,243,237,0.55);margin-bottom:0.5rem}
 .stat .val{font-family:'Montserrat',sans-serif;font-size:1.9rem;font-weight:800;color:#fff;line-height:1}
 .stat .sub{font-size:0.75rem;color:rgba(247,243,237,0.5);margin-top:0.35rem}
-
-/* Toolbar */
 .toolbar{display:flex;gap:0.6rem;flex-wrap:wrap;align-items:center;max-width:1200px;margin:0 auto 1rem}
 .toolbar input,.toolbar select{background:var(--navy-mid);border:1px solid rgba(247,243,237,0.12);color:var(--cream);padding:0.65rem 0.85rem;border-radius:4px;font-family:'Inter',sans-serif;font-size:0.86rem;outline:none}
 .toolbar input{flex:1;min-width:220px}
 .toolbar input:focus,.toolbar select:focus{border-color:var(--gold)}
 .toolbar .btn-new{background:var(--gold);color:#fff;border:none;padding:0.7rem 1.1rem;font-weight:700;font-size:0.85rem;border-radius:4px;cursor:pointer;letter-spacing:0.02em}
 .toolbar .btn-new:hover{background:var(--gold-light)}
-
-/* Table */
 .table-wrap{max-width:1200px;margin:0 auto;background:var(--navy-mid);border:1px solid rgba(247,243,237,0.08);border-radius:6px;overflow:hidden}
 table.apps{width:100%;border-collapse:collapse;font-size:0.88rem}
 table.apps th{text-align:left;padding:0.9rem 1rem;font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(247,243,237,0.5);border-bottom:1px solid rgba(247,243,237,0.08);background:rgba(0,0,0,0.25)}
@@ -95,21 +88,16 @@ table.apps tr.row-click:hover{background:rgba(213,43,30,0.06)}
 .applicant-cell .company{font-size:0.78rem;color:rgba(247,243,237,0.55)}
 .amount{font-family:'Montserrat',sans-serif;font-weight:700;color:#fff}
 .muted{color:rgba(247,243,237,0.5);font-size:0.82rem}
+.dealer-tag{display:inline-block;font-size:0.7rem;font-weight:700;letter-spacing:0.08em;color:var(--gold);background:rgba(213,43,30,0.1);padding:0.15rem 0.5rem;border-radius:3px;margin-top:0.2rem}
 .empty{padding:3rem 1rem;text-align:center;color:rgba(247,243,237,0.5);font-size:0.9rem}
-
-/* Status badges */
 .badge{display:inline-flex;align-items:center;gap:0.4rem;padding:0.3rem 0.65rem;border-radius:20px;font-size:0.72rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;white-space:nowrap}
 .badge::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
 .badge.b-pending{background:rgba(245,158,11,0.14);color:var(--amber)}
 .badge.b-pre{background:rgba(59,130,246,0.14);color:#60a5fa}
 .badge.b-approved{background:rgba(16,185,129,0.14);color:#34d399}
 .badge.b-declined{background:rgba(239,68,68,0.14);color:#f87171}
-
-/* Status select inline */
 .status-select{background:transparent;border:1px solid rgba(247,243,237,0.15);color:var(--cream);padding:0.4rem 0.55rem;border-radius:4px;font-size:0.78rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif}
 .status-select:hover{border-color:var(--gold)}
-
-/* Modal */
 .modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.78);z-index:200;align-items:flex-start;justify-content:center;padding:2.5rem 1rem;overflow-y:auto}
 .modal-bg.show{display:flex}
 .modal{background:#fff;color:var(--navy);border-radius:6px;max-width:720px;width:100%;padding:2rem 2.2rem;position:relative;box-shadow:0 50px 120px rgba(0,0,0,0.7)}
@@ -132,40 +120,24 @@ table.apps tr.row-click:hover{background:rgba(213,43,30,0.06)}
 .btn-delete{background:#fff;color:var(--red);border:1px solid var(--red)!important}
 .note-block{margin-top:1rem}
 .note-block textarea{width:100%;min-height:70px;padding:0.7rem;border:1.5px solid #e5e7eb;border-radius:4px;font-family:'Inter',sans-serif;font-size:0.85rem;resize:vertical}
-
-/* Back link */
 .back-link{display:inline-block;color:rgba(247,243,237,0.6);font-size:0.84rem;text-decoration:none;margin-bottom:1rem;cursor:pointer;background:none;border:none;font-family:'Inter',sans-serif;padding:0}
 .back-link:hover{color:var(--gold)}
-
-@media(max-width:900px){
-  .stats{grid-template-columns:repeat(2,1fr)}
-  table.apps th.hide-sm,table.apps td.hide-sm{display:none}
-}
-@media(max-width:760px){
-  nav{padding:0.9rem 1.2rem}
-  .card{padding:1.6rem 1.2rem}
-  .row,.row-3{grid-template-columns:1fr}
-  footer{padding:1.6rem 1.2rem}
-  main{padding:2rem 0.9rem}
-  .modal{padding:1.4rem 1.2rem}
-  .detail-grid{grid-template-columns:1fr;gap:0.2rem}
-  .detail-grid .dd{padding-bottom:0.5rem;border-bottom:1px solid #f1f1f1}
-}
+@media(max-width:900px){.stats{grid-template-columns:repeat(2,1fr)}table.apps th.hide-sm,table.apps td.hide-sm{display:none}}
+@media(max-width:760px){nav{padding:0.9rem 1.2rem}.card{padding:1.6rem 1.2rem}.row,.row-3{grid-template-columns:1fr}footer{padding:1.6rem 1.2rem}main{padding:2rem 0.9rem}.modal{padding:1.4rem 1.2rem}.detail-grid{grid-template-columns:1fr;gap:0.2rem}.detail-grid .dd{padding-bottom:0.5rem;border-bottom:1px solid #f1f1f1}}
 </style>
 </head>
 <body>
 
 <nav>
-  <a href="index.html" class="brand">Canada Car <span>Approvals</span></a>
+  <a href="/" class="brand">Canada Car <span>Approvals</span></a>
   <div class="nav-right">
-    <a href="dealer-partners.html">Dealer Partners</a>
+    <span id="whoami"></span>
     <button id="signoutBtn" onclick="signOut()">Sign Out</button>
   </div>
 </nav>
 
 <main>
 
-  <!-- SIGN IN VIEW -->
   <section id="signinView">
     <div class="eyebrow">Dealer Partners</div>
     <h1>Commercial Funding Portal</h1>
@@ -185,18 +157,16 @@ table.apps tr.row-click:hover{background:rgba(213,43,30,0.06)}
     </div>
   </section>
 
-  <!-- DASHBOARD VIEW -->
   <section id="dashView" class="hidden">
     <div class="eyebrow">Commercial Funding Portal</div>
-    <h1>Finance Manager Dashboard</h1>
-    <p class="lede">Track every application from submission to funding. Switch between tabs to review status, or open the New Application tab to submit another deal.</p>
+    <h1 id="dashTitle">Finance Manager Dashboard</h1>
+    <p class="lede" id="dashLede">Track every application from submission to funding.</p>
 
     <div class="tabs">
       <button class="tab active" data-view="dash" onclick="switchTab('dash')">Dashboard</button>
       <button class="tab" data-view="new" onclick="switchTab('new')">+ New Application</button>
     </div>
 
-    <!-- Stats -->
     <div class="stats">
       <div class="stat s-pending"><div class="lbl">Pending Review</div><div class="val" id="statPending">0</div><div class="sub">Awaiting decision</div></div>
       <div class="stat s-pre"><div class="lbl">Pre-Approved</div><div class="val" id="statPre">0</div><div class="sub">Conditional offer</div></div>
@@ -204,7 +174,6 @@ table.apps tr.row-click:hover{background:rgba(213,43,30,0.06)}
       <div class="stat s-declined"><div class="lbl">Declined</div><div class="val" id="statDeclined">0</div><div class="sub">Not approved</div></div>
     </div>
 
-    <!-- Toolbar -->
     <div class="toolbar">
       <input id="searchInput" type="search" placeholder="Search by applicant, company, or industry…" oninput="renderTable()">
       <select id="filterStatus" onchange="renderTable()">
@@ -213,6 +182,9 @@ table.apps tr.row-click:hover{background:rgba(213,43,30,0.06)}
         <option value="Pre-Approved">Pre-Approved</option>
         <option value="Approved">Approved / Funded</option>
         <option value="Declined">Declined</option>
+      </select>
+      <select id="filterDealer" onchange="renderTable()" style="display:none">
+        <option value="">All Dealers</option>
       </select>
       <select id="sortBy" onchange="renderTable()">
         <option value="newest">Newest first</option>
@@ -223,7 +195,6 @@ table.apps tr.row-click:hover{background:rgba(213,43,30,0.06)}
       <button class="btn-new" onclick="switchTab('new')">+ New Application</button>
     </div>
 
-    <!-- Table -->
     <div class="table-wrap">
       <table class="apps" id="appsTable">
         <thead>
@@ -242,7 +213,6 @@ table.apps tr.row-click:hover{background:rgba(213,43,30,0.06)}
     </div>
   </section>
 
-  <!-- APPLICATION VIEW -->
   <section id="appView" class="hidden">
     <div class="dash-wrap" style="margin-bottom:1rem">
       <button class="back-link" onclick="switchTab('dash')">← Back to Dashboard</button>
@@ -253,7 +223,6 @@ table.apps tr.row-click:hover{background:rgba(213,43,30,0.06)}
     <div class="card app-wrap">
       <div class="success" id="appSuccess">✓ Application submitted — added to dashboard and copy downloaded.</div>
       <form id="appForm" onsubmit="return submitApp(event)">
-
         <div class="section-h">Applicant Information</div>
         <div class="row">
           <div><label>First Name</label><input class="fi" name="First Name" required></div>
@@ -267,7 +236,6 @@ table.apps tr.row-click:hover{background:rgba(213,43,30,0.06)}
           <div><label>Email</label><input class="fi" name="Email" type="email" required></div>
           <div><label>Phone</label><input class="fi" name="Phone" type="tel" required></div>
         </div>
-
         <div class="section-h">Home Address</div>
         <label>Street Address</label>
         <input class="fi" name="Street Address" required>
@@ -285,7 +253,6 @@ table.apps tr.row-click:hover{background:rgba(213,43,30,0.06)}
           </div>
           <div><label>Postal Code</label><input class="fi" name="Postal Code" required></div>
         </div>
-
         <div class="section-h">Company Information</div>
         <label>Business Structure</label>
         <div class="radio-group">
@@ -308,7 +275,6 @@ table.apps tr.row-click:hover{background:rgba(213,43,30,0.06)}
         </div>
         <label>Equipment Being Financed</label>
         <textarea class="fi" name="Equipment" placeholder="Describe the equipment, vendor, and intended use…" required></textarea>
-
         <button class="submit" type="submit">Submit Application & Download Copy →</button>
       </form>
     </div>
@@ -316,7 +282,6 @@ table.apps tr.row-click:hover{background:rgba(213,43,30,0.06)}
 
 </main>
 
-<!-- Detail Modal -->
 <div class="modal-bg" id="modalBg" onclick="if(event.target===this)closeModal()">
   <div class="modal" id="modalInner">
     <button class="close-x" onclick="closeModal()">×</button>
@@ -326,38 +291,67 @@ table.apps tr.row-click:hover{background:rgba(213,43,30,0.06)}
 
 <footer>
   <p style="font-family:'Montserrat',sans-serif;color:#fff;font-size:1.1rem">Canada Car <span style="color:var(--gold)">Approvals</span> — Commercial Funding</p>
-  <p style="margin-top:0.6rem"><a href="dealer-partners.html">← Dealer Partners</a> &nbsp;·&nbsp; <a href="tel:18885552277">1-888-555-CARS</a></p>
   <p class="foot-legal">© Canada Car Approvals. Commercial funding subject to credit review and underwriting approval. Portal access restricted to authorized dealer partners.</p>
 </footer>
 
 <script>
-const CREDS = { user: "SOLUCO", pass: "SOLUCO123" };
-const STORE_KEY = "cfp_apps_v1";
+/* ===== Users & roles =====
+   admin: sees ALL submissions across all dealers, can approve/decline/delete
+   manager: can submit applications and see their OWN submissions only
+*/
+const USERS = {
+  SOLUCO:    { pass: "SOLUCO123",    role: "admin",   display: "Soluco (Admin)" },
+  DRIVETOWN: { pass: "drivetown123", role: "manager", display: "Drivetown Ottawa" }
+};
+const STORE_KEY = "cfp_apps_v2";
+const SESSION_KEY = "cfp_session_v2";
 const STATUSES = ["Pending","Pre-Approved","Approved","Declined"];
 
-/* ---------- Auth & view switching ---------- */
-function showAuthed(){
-  document.getElementById('signinView').classList.add('hidden');
-  document.getElementById('signoutBtn').style.display = 'inline-block';
-  switchTab('dash');
-  try { sessionStorage.setItem('cfp_auth','1'); } catch(e){}
-}
-function signOut(){
-  try { sessionStorage.removeItem('cfp_auth'); } catch(e){}
-  ['dashView','appView'].forEach(id=>document.getElementById(id).classList.add('hidden'));
-  document.getElementById('signinView').classList.remove('hidden');
-  document.getElementById('signoutBtn').style.display = 'none';
-  document.getElementById('signinForm').reset();
-  window.scrollTo({top:0});
-}
+let SESSION = null; // { user, role, display }
+
+/* ---------- Auth ---------- */
 function doSignIn(e){
   e.preventDefault();
   const u = document.getElementById('username').value.trim().toUpperCase();
   const p = document.getElementById('password').value;
   const err = document.getElementById('signinError');
-  if(u === CREDS.user && p === CREDS.pass){ err.classList.remove('show'); showAuthed(); }
-  else { err.classList.add('show'); }
+  const acct = USERS[u];
+  if(acct && acct.pass === p){
+    SESSION = { user: u, role: acct.role, display: acct.display };
+    try { sessionStorage.setItem(SESSION_KEY, JSON.stringify(SESSION)); } catch(e){}
+    err.classList.remove('show');
+    showAuthed();
+  } else {
+    err.classList.add('show');
+  }
   return false;
+}
+function showAuthed(){
+  document.getElementById('signinView').classList.add('hidden');
+  document.getElementById('signoutBtn').style.display = 'inline-block';
+  const who = document.getElementById('whoami');
+  who.style.display = 'inline-block';
+  who.innerHTML = 'Signed in as <b>'+esc(SESSION.display)+'</b>';
+
+  // role-based UI
+  const isAdmin = SESSION.role === 'admin';
+  document.getElementById('dashTitle').textContent = isAdmin ? 'Admin Underwriting Dashboard' : 'Finance Manager Dashboard';
+  document.getElementById('dashLede').textContent = isAdmin
+    ? 'Review every submitted application from all dealer partners. Approve, pre-approve, or decline below.'
+    : 'Submit applications on behalf of your clients and track their status.';
+  document.getElementById('filterDealer').style.display = isAdmin ? 'inline-block' : 'none';
+
+  switchTab('dash');
+}
+function signOut(){
+  try { sessionStorage.removeItem(SESSION_KEY); } catch(e){}
+  SESSION = null;
+  ['dashView','appView'].forEach(id=>document.getElementById(id).classList.add('hidden'));
+  document.getElementById('signinView').classList.remove('hidden');
+  document.getElementById('signoutBtn').style.display = 'none';
+  document.getElementById('whoami').style.display = 'none';
+  document.getElementById('signinForm').reset();
+  window.scrollTo({top:0});
 }
 function switchTab(view){
   document.getElementById('dashView').classList.toggle('hidden', view!=='dash');
@@ -369,11 +363,16 @@ function switchTab(view){
 
 /* ---------- Storage ---------- */
 function loadApps(){
-  try { return JSON.parse(localStorage.getItem(STORE_KEY)) || []; }
-  catch(e){ return []; }
+  try { return JSON.parse(localStorage.getItem(STORE_KEY)) || []; } catch(e){ return []; }
 }
 function saveApps(arr){
   try { localStorage.setItem(STORE_KEY, JSON.stringify(arr)); } catch(e){}
+}
+function visibleApps(){
+  const all = loadApps();
+  if(!SESSION) return [];
+  if(SESSION.role === 'admin') return all;
+  return all.filter(a => a.submittedBy === SESSION.user);
 }
 function uid(){ return 'a_'+Date.now().toString(36)+Math.random().toString(36).slice(2,7); }
 
@@ -383,12 +382,22 @@ function fmtMoney(n){ const v = Number(n)||0; return '$'+v.toLocaleString('en-CA
 function fmtDate(iso){ const d = new Date(iso); return d.toLocaleDateString('en-CA',{year:'numeric',month:'short',day:'numeric'}); }
 function fmtDateTime(iso){ const d = new Date(iso); return d.toLocaleString('en-CA'); }
 function statusClass(s){ return ({Pending:'b-pending','Pre-Approved':'b-pre',Approved:'b-approved',Declined:'b-declined'})[s]||'b-pending'; }
+function dealerDisplay(u){ return (USERS[u] && USERS[u].display) || u || '—'; }
 
 /* ---------- Render ---------- */
-function renderAll(){ renderStats(); renderTable(); }
+function renderAll(){ refreshDealerFilter(); renderStats(); renderTable(); }
+
+function refreshDealerFilter(){
+  if(!SESSION || SESSION.role!=='admin') return;
+  const sel = document.getElementById('filterDealer');
+  const cur = sel.value;
+  const dealers = Array.from(new Set(loadApps().map(a=>a.submittedBy).filter(Boolean)));
+  sel.innerHTML = '<option value="">All Dealers</option>' + dealers.map(d=>`<option value="${esc(d)}">${esc(dealerDisplay(d))}</option>`).join('');
+  sel.value = cur;
+}
 
 function renderStats(){
-  const apps = loadApps();
+  const apps = visibleApps();
   const by = (s)=>apps.filter(a=>a.status===s);
   document.getElementById('statPending').textContent = by('Pending').length;
   document.getElementById('statPre').textContent = by('Pre-Approved').length;
@@ -403,14 +412,17 @@ function renderTable(){
   const empty = document.getElementById('emptyState');
   const q = (document.getElementById('searchInput').value||'').toLowerCase().trim();
   const fStatus = document.getElementById('filterStatus').value;
+  const fDealer = document.getElementById('filterDealer').value;
   const sortBy = document.getElementById('sortBy').value;
+  const isAdmin = SESSION && SESSION.role === 'admin';
 
-  let apps = loadApps();
+  let apps = visibleApps();
   if(fStatus) apps = apps.filter(a=>a.status===fStatus);
+  if(isAdmin && fDealer) apps = apps.filter(a=>a.submittedBy===fDealer);
   if(q){
     apps = apps.filter(a=>{
       const d = a.data;
-      return [d['First Name'],d['Last Name'],d['Company Name'],d['Industry'],d['Email']]
+      return [d['First Name'],d['Last Name'],d['Company Name'],d['Industry'],d['Email'], dealerDisplay(a.submittedBy)]
         .some(v=>String(v||'').toLowerCase().includes(q));
     });
   }
@@ -422,10 +434,7 @@ function renderTable(){
   });
 
   tbody.innerHTML = '';
-  if(apps.length===0){
-    empty.classList.remove('hidden');
-    return;
-  }
+  if(apps.length===0){ empty.classList.remove('hidden'); return; }
   empty.classList.add('hidden');
 
   apps.forEach(a=>{
@@ -433,42 +442,48 @@ function renderTable(){
     const tr = document.createElement('tr');
     tr.className = 'row-click';
     tr.onclick = (e)=>{ if(e.target.tagName==='SELECT'||e.target.tagName==='BUTTON') return; openModal(a.id); };
+    const actionsCell = isAdmin
+      ? `<select class="status-select" onchange="changeStatus('${a.id}',this.value)">
+           ${STATUSES.map(s=>`<option ${s===a.status?'selected':''}>${s}</option>`).join('')}
+         </select>`
+      : `<span class="muted" style="font-size:0.78rem">View only</span>`;
     tr.innerHTML = `
       <td>
         <div class="applicant-cell">
           <span class="name">${esc((d['First Name']||'')+' '+(d['Last Name']||''))}</span>
           <span class="company">${esc(d['Company Name']||'—')}</span>
+          ${isAdmin?`<span class="dealer-tag">${esc(dealerDisplay(a.submittedBy))}</span>`:''}
         </div>
       </td>
       <td class="hide-sm"><span class="muted">${esc(d['Industry']||'—')}</span></td>
       <td><span class="amount">${fmtMoney(d['Requested Funding'])}</span></td>
       <td class="hide-sm"><span class="muted">${fmtDate(a.createdAt)}</span></td>
       <td><span class="badge ${statusClass(a.status)}">${esc(a.status)}</span></td>
-      <td style="text-align:right">
-        <select class="status-select" onchange="changeStatus('${a.id}',this.value)">
-          ${STATUSES.map(s=>`<option ${s===a.status?'selected':''}>${s}</option>`).join('')}
-        </select>
-      </td>`;
+      <td style="text-align:right">${actionsCell}</td>`;
     tbody.appendChild(tr);
   });
 }
 
 function changeStatus(id, status){
+  if(!SESSION || SESSION.role!=='admin') return;
   const apps = loadApps();
   const a = apps.find(x=>x.id===id);
   if(!a) return;
   a.status = status;
   a.updatedAt = new Date().toISOString();
+  a.decidedBy = SESSION.user;
   saveApps(apps);
   renderAll();
 }
 
 /* ---------- Modal ---------- */
 function openModal(id){
-  const a = loadApps().find(x=>x.id===id);
+  const a = visibleApps().find(x=>x.id===id);
   if(!a) return;
+  const isAdmin = SESSION && SESSION.role === 'admin';
   const d = a.data;
   const fields = [
+    ['Submitted By', dealerDisplay(a.submittedBy)],
     ['Applicant', (d['First Name']||'')+' '+(d['Last Name']||'')],
     ['Company', d['Company Name']],
     ['Email', d['Email']],
@@ -485,6 +500,29 @@ function openModal(id){
     ['Submitted', fmtDateTime(a.createdAt)],
     ['Last Updated', fmtDateTime(a.updatedAt||a.createdAt)],
   ];
+  const actionsHtml = isAdmin ? `
+    <div class="modal-actions">
+      <button class="btn-pending" onclick="setStatusFromModal('${a.id}','Pending')">Pending</button>
+      <button class="btn-pre" onclick="setStatusFromModal('${a.id}','Pre-Approved')">Pre-Approve</button>
+      <button class="btn-approve" onclick="setStatusFromModal('${a.id}','Approved')">Approve</button>
+      <button class="btn-decline" onclick="setStatusFromModal('${a.id}','Declined')">Decline</button>
+    </div>
+    <div class="modal-actions" style="border-top:none;padding-top:0;margin-top:0.6rem">
+      <button class="btn-download" onclick="downloadApp('${a.id}')">↓ Download Copy</button>
+      <button class="btn-delete" onclick="deleteApp('${a.id}')">Delete</button>
+    </div>` : `
+    <div class="modal-actions">
+      <button class="btn-download" onclick="downloadApp('${a.id}')">↓ Download Copy</button>
+    </div>`;
+  const notesHtml = isAdmin ? `
+    <div class="note-block">
+      <label>Underwriter Notes</label>
+      <textarea id="noteField" placeholder="Add internal note (auto-saves on status change)…">${esc(a.notes||'')}</textarea>
+    </div>` : (a.notes ? `
+    <div class="note-block">
+      <label>Underwriter Notes</label>
+      <div style="background:#fafafa;border:1px solid #eee;padding:0.7rem;border-radius:4px;font-size:0.88rem;white-space:pre-wrap">${esc(a.notes)}</div>
+    </div>` : '');
   const html = `
     <h2>${esc((d['First Name']||'')+' '+(d['Last Name']||''))} <span class="badge ${statusClass(a.status)}" style="vertical-align:middle;margin-left:0.5rem">${esc(a.status)}</span></h2>
     <div class="meta-line">${esc(d['Company Name']||'')} · Application ID ${a.id}</div>
@@ -495,25 +533,14 @@ function openModal(id){
       <div class="dt" style="font-size:0.74rem;color:var(--text-muted);font-weight:600;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:0.3rem">Equipment Being Financed</div>
       <div style="background:#fafafa;border:1px solid #eee;padding:0.8rem;border-radius:4px;font-size:0.88rem;white-space:pre-wrap">${esc(d['Equipment']||'—')}</div>
     </div>
-    <div class="note-block">
-      <label>Underwriter Notes</label>
-      <textarea id="noteField" placeholder="Add internal note (auto-saves on status change)…">${esc(a.notes||'')}</textarea>
-    </div>
-    <div class="modal-actions">
-      <button class="btn-pending" onclick="setStatusFromModal('${a.id}','Pending')">Pending</button>
-      <button class="btn-pre" onclick="setStatusFromModal('${a.id}','Pre-Approved')">Pre-Approve</button>
-      <button class="btn-approve" onclick="setStatusFromModal('${a.id}','Approved')">Approve</button>
-      <button class="btn-decline" onclick="setStatusFromModal('${a.id}','Declined')">Decline</button>
-    </div>
-    <div class="modal-actions" style="border-top:none;padding-top:0;margin-top:0.6rem">
-      <button class="btn-download" onclick="downloadApp('${a.id}')">↓ Download Copy</button>
-      <button class="btn-delete" onclick="deleteApp('${a.id}')">Delete</button>
-    </div>`;
+    ${notesHtml}
+    ${actionsHtml}`;
   document.getElementById('modalContent').innerHTML = html;
   document.getElementById('modalBg').classList.add('show');
 }
 function closeModal(){ document.getElementById('modalBg').classList.remove('show'); }
 function setStatusFromModal(id, status){
+  if(!SESSION || SESSION.role!=='admin') return;
   const apps = loadApps();
   const a = apps.find(x=>x.id===id);
   if(!a) return;
@@ -521,11 +548,13 @@ function setStatusFromModal(id, status){
   const note = document.getElementById('noteField');
   if(note) a.notes = note.value;
   a.updatedAt = new Date().toISOString();
+  a.decidedBy = SESSION.user;
   saveApps(apps);
   renderAll();
   openModal(id);
 }
 function deleteApp(id){
+  if(!SESSION || SESSION.role!=='admin') return;
   if(!confirm('Delete this application? This cannot be undone.')) return;
   const apps = loadApps().filter(x=>x.id!==id);
   saveApps(apps);
@@ -536,6 +565,7 @@ function deleteApp(id){
 /* ---------- Submit ---------- */
 function submitApp(e){
   e.preventDefault();
+  if(!SESSION){ signOut(); return false; }
   const form = e.target;
   const fd = new FormData(form);
   const data = {};
@@ -546,6 +576,8 @@ function submitApp(e){
     status: 'Pending',
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
+    submittedBy: SESSION.user,
+    submittedByDisplay: SESSION.display,
     notes: '',
     data
   };
@@ -553,7 +585,6 @@ function submitApp(e){
   apps.push(record);
   saveApps(apps);
 
-  // Download copy (same HTML report as before)
   const rows = Object.entries(data).map(([k,v])=>`<tr><th align="left" style="padding:10px 12px;border:1px solid #ddd;background:#f7f3ed;width:35%;">${esc(k)}</th><td style="padding:10px 12px;border:1px solid #ddd;">${esc(v)||'&mdash;'}</td></tr>`);
   const now = new Date();
   const company = String(data['Company Name']||'application');
@@ -562,7 +593,7 @@ function submitApp(e){
 <div style="border-bottom:3px solid #d52b1e;padding-bottom:12px;margin-bottom:18px;">
   <div style="font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#d52b1e;">Canada Car Approvals — Commercial Funding</div>
   <h1 style="font-family:Montserrat,Arial,sans-serif;font-size:26px;margin:6px 0 2px;">Credit Application</h1>
-  <div style="color:#6b7280;font-size:13px;">Submitted ${esc(now.toLocaleString())} · Status: Pending</div>
+  <div style="color:#6b7280;font-size:13px;">Submitted ${esc(now.toLocaleString())} by ${esc(SESSION.display)} · Status: Pending</div>
 </div>
 <table style="border-collapse:collapse;width:100%;font-size:14px;">${rows.join('')}</table>
 <p style="margin-top:20px;font-size:11px;color:#6b7280;">Confidential — for underwriting review only.</p>
@@ -587,7 +618,7 @@ function submitApp(e){
 }
 
 function downloadApp(id){
-  const a = loadApps().find(x=>x.id===id);
+  const a = visibleApps().find(x=>x.id===id);
   if(!a) return;
   const data = a.data;
   const rows = Object.entries(data).map(([k,v])=>`<tr><th align="left" style="padding:10px 12px;border:1px solid #ddd;background:#f7f3ed;width:35%;">${esc(k)}</th><td style="padding:10px 12px;border:1px solid #ddd;">${esc(v)||'&mdash;'}</td></tr>`);
@@ -597,7 +628,7 @@ function downloadApp(id){
 <div style="border-bottom:3px solid #d52b1e;padding-bottom:12px;margin-bottom:18px;">
   <div style="font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#d52b1e;">Canada Car Approvals — Commercial Funding</div>
   <h1 style="font-family:Montserrat,Arial,sans-serif;font-size:26px;margin:6px 0 2px;">Credit Application</h1>
-  <div style="color:#6b7280;font-size:13px;">Submitted ${esc(fmtDateTime(a.createdAt))} · Status: ${esc(a.status)}</div>
+  <div style="color:#6b7280;font-size:13px;">Submitted ${esc(fmtDateTime(a.createdAt))} by ${esc(dealerDisplay(a.submittedBy))} · Status: ${esc(a.status)}</div>
 </div>
 <table style="border-collapse:collapse;width:100%;font-size:14px;">${rows.join('')}</table>
 ${a.notes?`<h3 style="font-family:Montserrat,Arial,sans-serif;margin-top:18px;font-size:14px;">Underwriter Notes</h3><p style="font-size:13px;white-space:pre-wrap;background:#f7f3ed;padding:10px;border-radius:4px;">${esc(a.notes)}</p>`:''}
@@ -613,7 +644,13 @@ ${a.notes?`<h3 style="font-family:Montserrat,Arial,sans-serif;margin-top:18px;fo
 }
 
 /* ---------- Boot ---------- */
-try { if(sessionStorage.getItem('cfp_auth')==='1') showAuthed(); } catch(e){}
+try {
+  const raw = sessionStorage.getItem(SESSION_KEY);
+  if(raw){
+    const s = JSON.parse(raw);
+    if(s && s.user && USERS[s.user]){ SESSION = s; showAuthed(); }
+  }
+} catch(e){}
 </script>
 </body>
 </html>
