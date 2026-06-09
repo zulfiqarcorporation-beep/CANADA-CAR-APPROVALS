@@ -305,6 +305,13 @@ const USERS = {
 };
 const STORE_KEY = "cfp_apps_v2";
 const SESSION_KEY = "cfp_session_v2";
+/* Shared cloud storage (jsonblob.com - free, no signup, CORS enabled).
+   All logins read/write this same blob so applications are visible across
+   browsers and devices and never expire from localStorage. */
+const CLOUD_URL = "https://jsonblob.com/api/jsonBlob/019ead96-15e4-73a7-8978-3ee098a1eb20";
+let CACHE = [];
+let CLOUD_REV = "";
+let POLL_TIMER = null;
 const STATUSES = ["Pending","Pre-Approved","Approved","Declined"];
 
 let SESSION = null; // { user, role, display }
@@ -341,9 +348,11 @@ function showAuthed(){
     : 'Submit applications on behalf of your clients and track their status.';
   document.getElementById('filterDealer').style.display = isAdmin ? 'inline-block' : 'none';
 
+  cloudPull(true).then(()=>{ renderAll(); startPolling(); });
   switchTab('dash');
 }
 function signOut(){
+  stopPolling();
   try { sessionStorage.removeItem(SESSION_KEY); } catch(e){}
   SESSION = null;
   ['dashView','appView'].forEach(id=>document.getElementById(id).classList.add('hidden'));
@@ -361,13 +370,53 @@ function switchTab(view){
   if(view==='dash') renderAll();
 }
 
-/* ---------- Storage ---------- */
-function loadApps(){
-  try { return JSON.parse(localStorage.getItem(STORE_KEY)) || []; } catch(e){ return []; }
-}
+/* ---------- Storage (cloud-backed, with localStorage fallback) ---------- */
+function loadApps(){ return Array.isArray(CACHE) ? CACHE : []; }
 function saveApps(arr){
-  try { localStorage.setItem(STORE_KEY, JSON.stringify(arr)); } catch(e){}
+  CACHE = Array.isArray(arr) ? arr : [];
+  try { localStorage.setItem(STORE_KEY, JSON.stringify(CACHE)); } catch(e){}
+  cloudPush();
 }
+async function cloudPull(silent){
+  try {
+    const res = await fetch(CLOUD_URL, { headers: { 'Accept':'application/json' }, cache:'no-store' });
+    if(!res.ok) throw new Error('pull '+res.status);
+    const json = await res.json();
+    const arr = Array.isArray(json) ? json : (Array.isArray(json && json.applications) ? json.applications : []);
+    const rev = JSON.stringify(arr);
+    if(rev !== CLOUD_REV){
+      CLOUD_REV = rev;
+      CACHE = arr;
+      try { localStorage.setItem(STORE_KEY, JSON.stringify(CACHE)); } catch(e){}
+      if(!silent && SESSION) renderAll();
+    }
+  } catch(e){
+    if(!CACHE || !CACHE.length){
+      try { CACHE = JSON.parse(localStorage.getItem(STORE_KEY)) || []; } catch(_) { CACHE = []; }
+    }
+  }
+}
+let _pushTimer = null, _pushing = false, _pushAgain = false;
+function cloudPush(){
+  clearTimeout(_pushTimer);
+  _pushTimer = setTimeout(doPush, 300);
+}
+async function doPush(){
+  if(_pushing){ _pushAgain = true; return; }
+  _pushing = true;
+  try {
+    const body = JSON.stringify({ applications: CACHE });
+    const res = await fetch(CLOUD_URL, { method:'PUT', headers:{ 'Content-Type':'application/json' }, body });
+    if(res.ok) CLOUD_REV = JSON.stringify(CACHE);
+  } catch(e){ /* offline - localStorage still has it */ }
+  _pushing = false;
+  if(_pushAgain){ _pushAgain = false; doPush(); }
+}
+function startPolling(){
+  stopPolling();
+  POLL_TIMER = setInterval(()=>cloudPull(false), 12000);
+}
+function stopPolling(){ if(POLL_TIMER){ clearInterval(POLL_TIMER); POLL_TIMER=null; } }
 function visibleApps(){
   const all = loadApps();
   if(!SESSION) return [];
@@ -644,6 +693,7 @@ ${a.notes?`<h3 style="font-family:Montserrat,Arial,sans-serif;margin-top:18px;fo
 }
 
 /* ---------- Boot ---------- */
+try { CACHE = JSON.parse(localStorage.getItem(STORE_KEY)) || []; } catch(e){ CACHE = []; }
 try {
   const raw = sessionStorage.getItem(SESSION_KEY);
   if(raw){
