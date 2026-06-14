@@ -692,6 +692,14 @@ function submitApp(e){
     alert('Application saved locally but could not sync to cloud: '+err.message+'\nTry again or contact support.');
   });
 
+  // Web3Forms email notification
+  try {
+    const w3 = { access_key: '8a369f17-5d11-4da9-85e5-d1f8eeba350d', subject: 'New Credit Application — ' + (data['Company Name']||'Unknown'), from_name: 'Commercial Funding Portal', submitted_by: SESSION.display, application_id: record.id, ...data };
+    fetch('https://api.web3forms.com/submit', { method:'POST', headers:{'Content-Type':'application/json', Accept:'application/json'}, body: JSON.stringify(w3) }).catch(()=>{});
+  } catch(_) {}
+
+
+
   const _now = new Date();
   const rows = Object.entries(data).map(([k,v])=>`<tr><th align="left" style="padding:10px 12px;border:1px solid #ddd;background:#f7f3ed;width:35%;">${esc(k)}</th><td style="padding:10px 12px;border:1px solid #ddd;">${esc(v)||'&mdash;'}</td></tr>`);
   const company = String(data['Company Name']||'application');
