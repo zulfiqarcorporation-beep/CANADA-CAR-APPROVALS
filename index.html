@@ -1,6 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head><style>
+@font-face {
+  font-family: "Optimistic";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("/fonts/OptimisticAI_VF_Optimized.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Optimistic Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/OptimisticMono_W_TextRegular.woff2") format("woff2");
+}
+:where(html) {
+  font-family: "Optimistic", system-ui, sans-serif;
+}
+:where(code, pre, kbd, samp) {
+  font-family: "Optimistic Mono", ui-monospace, monospace;
+}
+</style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Auto Loans Canada | Bad Credit Car Loans — Guaranteed Approval | Canada Car Approvals</title>
@@ -33,8 +52,8 @@
 <meta name="twitter:image" content="https://canadacarapprovals.ca/og-image.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
 
 <!-- Structured Data: Organization + AutoDealer -->
 <script type="application/ld+json">
@@ -451,6 +470,18 @@
   }
 
 
+
+  .soft-check{font-size:.82rem;font-weight:600;color:#166534;background:#dcfce7;border:1px solid #bbf7d0;padding:.55rem .7rem;border-radius:8px;margin:.6rem 0 .9rem;line-height:1.4}
+  .progress-wrap{margin:.2rem 0 1rem}
+  .progress-label{font-size:.78rem;font-weight:600;color:#6b7280;display:flex;justify-content:space-between;margin-bottom:.4rem}
+  .progress-track{height:8px;background:#e5e7eb;border-radius:999px;overflow:hidden}
+  .progress-fill{height:100%;background:var(--red);border-radius:999px;transition:width .3s ease;width:20%}
+  .step-reassure{font-size:.82rem;color:#6b7280;margin-top:.7rem}
+  .sticky-call{position:fixed;left:0;right:0;bottom:0;z-index:999;background:#0a0a0a;color:#fff;padding:.7rem 1rem;display:none;justify-content:space-between;align-items:center;gap:.75rem;box-shadow:0 -4px 20px rgba(0,0,0,.25)}
+  .sticky-call a{color:#fff;text-decoration:none;font-weight:700;white-space:nowrap}
+  .sticky-call .sc-btn{background:var(--red);color:#fff!important;padding:.6rem 1rem;border-radius:6px}
+  @media(max-width:768px){.sticky-call{display:flex} body{padding-bottom:64px}}
+
   html { scroll-behavior: smooth; }
   section[id], div[id="contact"] { scroll-margin-top: 90px; }
   /* Process section */
@@ -554,7 +585,7 @@
         <a href="tel:16134156857" class="btn-outline">📞 613-415-6857</a>
       </div>
       <div class="hero-stats">
-        <div><div class="stat-num">98%</div><div class="stat-label">Approval Rate</div></div>
+        <div><div class="stat-num">98%</div><div class="stat-label">Applicants Matched to a Lender</div></div>
         <div><div class="stat-num">50,000+</div><div class="stat-label">Drivers Approved</div></div>
         <div><div class="stat-num">$0 Down</div><div class="stat-label">Options Available</div></div>
       </div>
@@ -564,20 +595,10 @@
     <div class="form-card">
       <div class="form-tag">Free &amp; Confidential — Canada</div>
       <div class="form-title">Get Pre-Approved in 60 Seconds</div>
-      <div class="form-sub">Takes 60 seconds. A finance specialist reviews your application within hours.</div>
+      <div class="soft-check">✓ Soft credit check only &nbsp;•&nbsp; Won't affect your credit score &nbsp;•&nbsp; No obligation</div>
+      <div class="form-sub">Check your options in 60 seconds. Get your decision same-day — no obligation.</div>
 
-      <div class="step-progress" id="hProg">
-        <div class="step-dot active" id="hd1"><span class="dot-num">1</span></div>
-        <div class="step-line" id="hl1"></div>
-        <div class="step-dot" id="hd2"><span class="dot-num">2</span></div>
-        <div class="step-line" id="hl2"></div>
-        <div class="step-dot" id="hd3"><span class="dot-num">3</span></div>
-        <div class="step-line" id="hl3"></div>
-        <div class="step-dot" id="hd4"><span class="dot-num">4</span></div>
-        <div class="step-line" id="hl4"></div>
-        <div class="step-dot" id="hd5"><span class="dot-num">5</span></div>
-      </div>
-
+      <div class="progress-wrap" id="hProg"><div class="progress-label"><span id="hProgText">Step 1 of 5 — 60 seconds</span><span>Almost done →</span></div><div class="progress-track"><div class="progress-fill" id="hFill"></div></div></div>
       <div class="form-step active" id="hs1">
         <div class="step-q">What type of vehicle are you looking for?</div>
         <div class="option-grid">
@@ -592,7 +613,7 @@
       </div>
 
       <div class="form-step" id="hs2">
-        <div class="step-q">How would you describe your credit?</div>
+        <div class="step-q">How would you describe your credit?</div><p class="step-reassure">This just helps us match you to the right lender. Soft check only — it won't affect your score.</p>
         <div class="radio-options">
           <div class="radio-option" onclick="pickR(this,'hs2')"><div class="radio-circle"></div><span class="radio-text">Excellent (720+)</span></div>
           <div class="radio-option" onclick="pickR(this,'hs2')"><div class="radio-circle"></div><span class="radio-text">Good (650 – 719)</span></div>
@@ -632,8 +653,8 @@
         </div>
         <input class="form-input" type="tel" placeholder="Phone number">
         <input class="form-input" type="email" placeholder="Email address">
-        <div class="form-nav"><button class="btn-back" onclick="hBack(5)">← Back</button><button class="btn-next gold-btn" onclick="hSubmit()">Get My Get Approved →</button></div>
-        <p class="disclosure">No impact on your credit score. Submitting this form does not guarantee approval. Final terms subject to lender review.</p>
+        <div class="form-nav"><button class="btn-back" onclick="hBack(5)">← Back</button><button class="btn-next gold-btn" onclick="hSubmit()">Get My Approval →</button></div>
+        <p class="disclosure">✓ Soft credit check only — no impact on your credit score. No obligation. Submitting this form does not guarantee approval. Final terms subject to lender review.</p>
       </div>
 
       <div class="form-step" id="hsSuccess">
@@ -645,7 +666,7 @@
       </div>
 
       <div class="trust-row">
-        <div class="trust-badge">🔒 SSL Encrypted</div>
+        <div class="trust-badge">✓ Soft Check — Won't Affect Your Score</div>
         <div class="trust-badge">🇨🇦 Trusted Canadian Network</div>
         <div class="trust-badge">✅ $0 Down Options Available</div>
       </div>
@@ -907,20 +928,10 @@
     <button class="modal-close" onclick="closeModal()">✕</button>
     <div class="form-tag">Free &amp; Confidential — Canada</div>
     <div class="form-title">Get Pre-Approved in 60 Seconds</div>
-    <div class="form-sub">A Canada Car Approvals finance specialist will reach out within hours — completely free, with no obligation.</div>
+      <div class="soft-check">✓ Soft credit check only &nbsp;•&nbsp; Won't affect your credit score &nbsp;•&nbsp; No obligation</div>
+    <div class="form-sub">Check your options in 60 seconds. Get your decision same-day — completely free, with no obligation.</div>
 
-    <div class="step-progress" id="mProg">
-      <div class="step-dot active" id="md1"><span class="dot-num">1</span></div>
-      <div class="step-line" id="ml1"></div>
-      <div class="step-dot" id="md2"><span class="dot-num">2</span></div>
-      <div class="step-line" id="ml2"></div>
-      <div class="step-dot" id="md3"><span class="dot-num">3</span></div>
-      <div class="step-line" id="ml3"></div>
-      <div class="step-dot" id="md4"><span class="dot-num">4</span></div>
-      <div class="step-line" id="ml4"></div>
-      <div class="step-dot" id="md5"><span class="dot-num">5</span></div>
-    </div>
-
+    <div class="progress-wrap" id="mProg"><div class="progress-label"><span id="mProgText">Step 1 of 5 — 60 seconds</span><span>Almost done →</span></div><div class="progress-track"><div class="progress-fill" id="mFill"></div></div></div>
     <div class="form-step active" id="ms1">
       <div class="step-q">What type of vehicle are you looking for?</div>
       <div class="option-grid">
@@ -935,7 +946,7 @@
     </div>
 
     <div class="form-step" id="ms2">
-      <div class="step-q">How would you describe your credit?</div>
+      <div class="step-q">How would you describe your credit?</div><p class="step-reassure">This just helps us match you to the right lender. Soft check only — it won't affect your score.</p>
       <div class="radio-options">
         <div class="radio-option" onclick="pickR(this,'ms2')"><div class="radio-circle"></div><span class="radio-text">Excellent (720+)</span></div>
         <div class="radio-option" onclick="pickR(this,'ms2')"><div class="radio-circle"></div><span class="radio-text">Good (650 – 719)</span></div>
@@ -975,8 +986,8 @@
       </div>
       <input class="form-input" type="tel" placeholder="Phone number">
       <input class="form-input" type="email" placeholder="Email address">
-      <div class="form-nav"><button class="btn-back" onclick="mBack(5)">← Back</button><button class="btn-next gold-btn" onclick="mSubmit()">Get My Get Approved →</button></div>
-      <p class="disclosure">No impact on your credit score. Submitting this form does not guarantee approval. Final terms subject to lender review.</p>
+      <div class="form-nav"><button class="btn-back" onclick="mBack(5)">← Back</button><button class="btn-next gold-btn" onclick="mSubmit()">Get My Approval →</button></div>
+      <p class="disclosure">✓ Soft credit check only — no impact on your credit score. No obligation. Submitting this form does not guarantee approval. Final terms subject to lender review.</p>
     </div>
 
     <div class="form-step" id="msSuccess">
@@ -988,7 +999,7 @@
     </div>
 
     <div class="trust-row">
-      <div class="trust-badge">🔒 SSL Encrypted</div>
+      <div class="trust-badge">✓ Soft Check — Won't Affect Your Score</div>
       <div class="trust-badge">🇨🇦 Trusted Canadian Network</div>
       <div class="trust-badge">✅ $0 Down Options Available</div>
     </div>
@@ -999,16 +1010,38 @@
 function pick(el, sid) {
   document.getElementById(sid).querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
   el.classList.add('selected');
+  // Auto-advance: one less click = less drop-off
+  setTimeout(()=>{
+    const num=parseInt(sid.replace(/\D/g,''))||1;
+    if(sid.startsWith('hs')) hNext(num); else if(sid.startsWith('ms')) mNext(num);
+  },250);
 }
 function pickR(el, sid) {
   document.getElementById(sid).querySelectorAll('.radio-option').forEach(r => r.classList.remove('selected'));
   el.classList.add('selected');
+  setTimeout(()=>{
+    const num=parseInt(sid.replace(/\D/g,''))||1;
+    if(sid.startsWith('hs')) hNext(num); else if(sid.startsWith('ms')) mNext(num);
+  },250);
+}
+function updateProgress(pfx, to, max){
+  const fill = document.getElementById(pfx==='hs'?'hFill':'mFill');
+  const label = document.getElementById(pfx==='hs'?'hProgText':'mProgText');
+  if(fill) fill.style.width = Math.round(to/max*100)+'%';
+  if(label) label.textContent = to>=max ? 'Last step — you\'re almost there!' : 'Step '+to+' of '+max+' — 60 seconds';
 }
 function advance(pfx, dpfx, lpfx, from, to, max) {
+  // Validation: don't advance from 1-4 without a selection
+  if(to>from && from<5){
+    const cur=document.getElementById(pfx+from);
+    const hasSel=cur.querySelector('.option-card.selected, .radio-option.selected') || cur.querySelector('select')?.value;
+    if(!hasSel){ cur.style.outline='2px solid #d52b1e'; cur.style.borderRadius='8px'; setTimeout(()=>cur.style.outline='',1200); return; }
+  }
   document.getElementById(pfx + from).classList.remove('active');
   const toEl = document.getElementById(pfx + to);
   if (!toEl) return;
   toEl.classList.add('active');
+  updateProgress(pfx, to, max);
   for (let i = 1; i <= max; i++) {
     const d = document.getElementById(dpfx + i);
     const l = document.getElementById(lpfx + i);
@@ -1061,6 +1094,9 @@ async function sendToWeb3Forms(payload) {
   }
 }
 async function hSubmit() {
+  const inputs=document.querySelectorAll('#hs5 input');
+  const [fn,ln,ph,em]=[...inputs].map(i=>i.value.trim());
+  if(!fn||!ph||!em||!em.includes('@')){ alert('Please add your first name, phone, and a valid email so we can send your approval.'); return; }
   await sendToWeb3Forms(collectLead('hs'));
   document.getElementById('hs5').classList.remove('active');
   document.getElementById('hsSuccess').classList.add('active');
@@ -1069,6 +1105,9 @@ async function hSubmit() {
 function mNext(n) { advance('ms','md','ml',n,n+1,5); }
 function mBack(n) { advance('ms','md','ml',n,n-1,5); }
 async function mSubmit() {
+  const inputs=document.querySelectorAll('#ms5 input');
+  const [fn,ln,ph,em]=[...inputs].map(i=>i.value.trim());
+  if(!fn||!ph||!em||!em.includes('@')){ alert('Please add your first name, phone, and a valid email so we can send your approval.'); return; }
   await sendToWeb3Forms(collectLead('ms'));
   document.getElementById('ms5').classList.remove('active');
   document.getElementById('msSuccess').classList.add('active');
@@ -1101,5 +1140,7 @@ document.querySelectorAll('#navLinks a').forEach(a => a.addEventListener('click'
 function toggleFaq(el){ el.parentElement.classList.toggle('open'); }
 </script>
 
-</body>
-</html>
+<div class="sticky-call"><span>Questions? Talk to a specialist</span><a href="tel:16134156857">📞 Call Now</a><a class="sc-btn" href="#" onclick="openModal();return false;">Get Approved</a></div>
+<script>(function(){var loc=location.href.replace(/#.*$/,"");var ATTR_NAMES=["data-product-id","data-productid","data-product_id","product-id","productid","product_id","data-source-entity-id","source-entity-id","source_entity_id","data-product","data-metadata","data-meta"];var DATASET_KEYS=["productId","productid","product_id","sourceEntityId","sourceentityid","source_entity_id","product","metadata","meta"];function readProductId(value){if(typeof value!=="string"||value.length===0)return null;if(/^[0-9]{6,}$/.test(value))return value;var match=value.match(/(?:product(?:_|-)?id|source(?:_|-)?entity(?:_|-)?id)["'=:\s]+([0-9]{6,})/i);return match?match[1]:null}function extractProductId(start){for(var node=start;node&&node!==document.body;node=node.parentElement){for(var i=0;i<ATTR_NAMES.length;i++){var attrValue=node.getAttribute&&node.getAttribute(ATTR_NAMES[i]);var attrProductId=readProductId(attrValue);if(attrProductId)return attrProductId}var dataset=node.dataset||null;if(dataset){for(var j=0;j<DATASET_KEYS.length;j++){var dataValue=dataset[DATASET_KEYS[j]];var dataProductId=readProductId(dataValue);if(dataProductId)return dataProductId}}}return null}function isInlineMediaSlotElement(node){return !!(node&&node.getAttribute&&node.getAttribute("data-clippy-inline-media-slot")!==null)}function findInlineMediaSlot(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(isInlineMediaSlotElement(node))return node}return null}function readInlineMediaUrl(node){if(!node)return null;return node.getAttribute&&((node.getAttribute("data-clippy-inline-media-url")||node.getAttribute("data-url")||node.getAttribute("data_url")))||node.href||null}function stripHash(url){return String(url).replace(/#.*$/,"")}function urlsMatch(a,b){if(!a||!b)return false;try{return stripHash(new URL(a,loc).href)===stripHash(new URL(b,loc).href)}catch(_){return stripHash(a)===stripHash(b)}}function isFirstPartyReelUrl(value){try{var url=new URL(value,loc);if(url.protocol!=="https:")return false;var host=url.hostname.toLowerCase();var supported=host==="instagram.com"||host.endsWith(".instagram.com")||host==="facebook.com"||host.endsWith(".facebook.com");return supported&&/\/reels?\//i.test(url.pathname)}catch(_){return false}}function isInlineMediaUrlClick(node,href){var slot=findInlineMediaSlot(node);if(!slot)return false;var slotUrl=readInlineMediaUrl(slot);if(slotUrl)return urlsMatch(href,slotUrl);return isFirstPartyReelUrl(href)}function findDataHref(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(node.getAttribute){var href=node.getAttribute("data-href")||node.getAttribute("data-url");if(href)return{href:href,node:node}}}return null}var nativeOpen=window.open;window.open=function(url){if(parent!==window&&typeof url==="string"&&/^https?:\/\//.test(url)){parent.postMessage({type:"ecto:usercontent-link-click",href:url},"*");return null}return nativeOpen?nativeOpen.apply(window,arguments):null};document.addEventListener("click",function(e){var target=e.target instanceof Element?e.target:null;if(!target)return;if(parent===window)return;var a=target.closest?target.closest("a[href]"):null;if(a&&a.href&&/^https?:\/\//.test(a.href)&&a.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(a,a.href))return;var productId=extractProductId(target)||extractProductId(a);if(productId){e.preventDefault();parent.postMessage({type:"ecto-artifact-link-click",productId:productId},"*");return}e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:a.href},"*");return}var dataHref=findDataHref(target);if(dataHref&&/^https?:\/\//.test(dataHref.href)&&dataHref.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(dataHref.node,dataHref.href))return;e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:dataHref.href},"*")}},true)})();</script><script>(function(){var FOCUS_TYPE="ecto:artifact-focus-request";var CLOSE_TYPE="ecto:artifact-close-request";function focusArtifactDocument(){var body=document.body;if(!body)return;try{window.focus();}catch(e){}if(!body.hasAttribute("tabindex"))body.setAttribute("tabindex","-1");try{body.focus({preventScroll:true});}catch(e){try{body.focus();}catch(e2){}}}window.addEventListener("message",function(event){if(event.source!==window.parent)return;var data=event.data;if(!data||typeof data!=="object"||data.type!==FOCUS_TYPE)return;if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",focusArtifactDocument,{once:true});return;}focusArtifactDocument();});window.addEventListener("keydown",function(event){if(event.key!=="Escape")return;window.setTimeout(function(){if(event.defaultPrevented)return;window.parent.postMessage({type:CLOSE_TYPE},"*");},0);});})();</script>
+
+</body></html>
